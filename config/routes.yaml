@@ -1,0 +1,12 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+homepage:
+  path: /
+  controller: App\Controller\HomeController::homepage
+adminDashboard:
+  path: /admin
+  controller: App\Controller\HomeController::adminDashboard
+verify_email:
+  path: /verify
+  controller: App\Controller\HomeController::index

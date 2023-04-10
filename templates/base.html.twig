@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Roubafika{% endblock %}</title>
+    {% block stylesheets %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <!-- Bootstrap core CSS -->
+         <!-- App favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}" type="text/css">
+
+        <!--Material Icon -->
+        <link rel="stylesheet" type="text/css" href="{{asset('front/css/materialdesignicons.min.css')}}" />
+    
+        <!--pe-7 Icon -->
+        <link rel="stylesheet" type="text/css" href="{{asset('front/css/pe-icon-7-stroke.css')}}" />
+
+        <!-- Custom  sCss -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('front/css/style.css') }}"/>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+
+            .dropdown555 {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown555 .dropbtn {
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown555:hover .dropbtn {
+                background-color: whitesmoke;
+            }
+
+            .dropdown-content5555 {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content5555 a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content5555 a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown555:hover .dropdown-content5555 {
+                display: block;
+            }
+        </style>
+
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ asset('front/images/favicon.ico') }}">
+</head>
+<body style="background-color: #f8f9fa !important;">
+{% block navbar %}
+    <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" id="nav-sticky">
+            <div class="container-fluid">
+                <!-- LOGO -->
+                <a class="logo text-uppercase" href="index.html">
+                    <img src="{{asset('front/images/logo-light.png')}}" alt="" class="logo-light" height="18" />
+                    <img src="{{asset('front/images/logo-dark.png')}}" alt="" class="logo-dark" height="18" />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto" id="mySidenav">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#features" class="nav-link">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#services" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#demo" class="nav-link">Demos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#clients" class="nav-link">Clients</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#pricing" class="nav-link"> Pricing </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+{% endblock %}
+
+{% block body %}
+       <section class="bg-home bg-gradient" id="home">
+
+            <div class="home-center">
+                <div class="home-desc-center">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="home-title">
+                                    <h5 class="mb-3 text-white-50">Discover Adminto Today</h5>
+                                    <h2 class="mb-4 text-white">Make your Site Amazing & Unique with Adminto</h2>
+                                    <p class="text-white-50 home-desc font-16 mb-5">Adminto is a fully featured premium Landing template built on top of awesome Bootstrap 4.3.1, modern web technology HTML5, CSS3 and jQuery. </p>
+                                    <div class="watch-video mt-5">
+                                        <a href="#" class="btn btn-custom me-4">Get Started <i class="mdi mdi-chevron-right ms-1"></i></a>
+                                        <a href="http://vimeo.com/99025203" class="video-play-icon text-white"><i class="mdi mdi-play play-icon-circle me-2"></i> <span>Watch The Video</span></a>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="col-lg-5 offset-lg-1 col-sm-6">
+                                <div class="home-img mo-mt-20">
+                                    <img src="{{asset('front/images/home-img.png')}}" alt="" class="img-fluid mx-auto d-block">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        
+                    </div>
+                    <!-- end container-fluid -->
+                </div>
+            </div>
+        </section>
+           <section class="features" id="features">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-pills nav-justified features-tab mb-5" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-code-tab" data-bs-toggle="pill" href="#pills-code" role="tab" aria-controls="pills-code" aria-selected="true">
+                                    <div class="clearfix">
+                                        <div class="features-icon float-end">
+                                           <h1><i class="pe-7s-notebook tab-icon"></i></h1>
+                                        </div>
+                                        <div class="d-none d-lg-block me-4">
+                                            <h5 class="tab-title">Quality Code</h5>
+                                            <p>At vero eos et accusam et</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-customize-tab" data-bs-toggle="pill" href="#pills-customize" role="tab" aria-controls="pills-customize" aria-selected="false">
+                                    <div class="clearfix">
+                                        <div class="features-icon float-end">
+                                            <h1><i class="pe-7s-edit tab-icon"></i></h1>
+                                        </div>
+                                        <div class="d-none d-lg-block me-4">
+                                            <h5 class="tab-title">Easy to customize</h5>
+                                            <p>Sed ut unde iste error sit</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-support-tab" data-bs-toggle="pill" href="#pills-support" role="tab" aria-controls="pills-support" aria-selected="false">
+                                    <div class="features-icon float-end">
+                                       <h1><i class="pe-7s-headphones tab-icon"></i></h1>
+                                    </div>
+                                    <div class="d-none d-lg-block me-4">
+                                        <h5 class="tab-title">Awesome Support</h5>
+                                        <p>It will be as simple as fact</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade" id="pills-code" role="tabpanel" aria-labelledby="pills-code-tab">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div>
+                                            <img src="{{asset('front/images/features-img/img-1.png')}}" alt="" class="img-fluid mx-auto d-block">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 offset-lg-1">
+                                        <div>
+                                            <div class="feature-icon mb-4">
+                                                <h1><i class="pe-7s-notebook text-primary"></i></h1>
+                                            </div>
+                                            <h5 class="mb-3">Quality Code</h5>
+                                            <p class="text-muted">It will be as simple as Occidental in fact, it will be Occidental. To an English person it will seem like simplified English as a skeptical Cambridge.</p>
+                                            <p class="text-muted">If several languages coalesce the grammar of the resulting language </p>
+                                            <div class="row pt-4">
+                                                <div class="col-lg-6">
+                                                    <div class="text-muted">
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> Nemo enim ipsam quia</p>
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> Ut enim ad minima</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="text-muted">
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> At vero eos accusamus et </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <a href="#" class="btn btn-custom">Learn More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <div class="tab-pane fades how active" id="pills-customize" role="tabpanel" aria-labelledby="pills-customize-tab">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div>
+                                            <img src="{{asset('front/images/features-img/img-2.png')}}" alt="" class="img-fluid mx-auto d-block">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 offset-lg-1">
+                                        <div>
+                                            <div class="feature-icon mb-4">
+                                                <h1><i class="pe-7s-edit text-primary"></i></h1>
+                                            </div>
+                                            <h5 class="mb-3">Easy to customize</h5>
+                                            <p class="text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et</p>
+                                            <p class="text-muted">If several languages coalesce the grammar of the resulting language </p>
+                                            <div class="row pt-4">
+                                                <div class="col-lg-6">
+                                                    <div class="text-muted">
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> Nemo enim ipsam quia</p>
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> Ut enim ad minima</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="text-muted">
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> At vero eos accusamus et </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <a href="#" class="btn btn-custom">Learn More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <div class="tab-pane fade" id="pills-support" role="tabpanel" aria-labelledby="pills-support-tab">
+                                
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div>
+                                            <img src="{{asset('front/images/features-img/img-3.png')}}" alt="" class="img-fluid mx-auto d-block">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 offset-lg-1">
+                                        <div>
+                                            <div class="feature-icon mb-4">
+                                                <i class="pe-7s-headphones h1 text-primary"></i>
+                                            </div>
+                                            <h5 class="mb-3">Awesome Support</h5>
+                                            <p class="text-muted">It will be as simple as Occidental in fact, it will be Occidental. To an English person it will seem like simplified English as a skeptical Cambridge.</p>
+                                            <p class="text-muted">If several languages coalesce the grammar of the resulting language </p>
+                                            <div class="row pt-4">
+                                                <div class="col-lg-6">
+                                                    <div class="text-muted">
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> Nemo enim ipsam quia</p>
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> Ut enim ad minima</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="text-muted">
+                                                        <p><i class="mdi mdi-checkbox-marked-outline text-primary me-2 h6"></i> At vero eos accusamus et </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <a href="#" class="btn btn-custom">Learn More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                        <!-- end tab-content -->
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container-fluid -->
+        </section>
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('front/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('front/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('front/js/scrollspy.min.js') }}"></script>
+
+    <!-- Magnific Popup -->
+    <script src="{{ asset('front/js/jquery.magnific-popup.min.js') }}"></script>
+
+    <!-- counter js -->
+    <script src="{{ asset('front/js/counter.int.js') }}"></script>
+
+    <!-- custom js -->
+    <script src="{{ asset('front/js/app.js') }}"></script>
+{% endblock %}
+</body>
+</html>
