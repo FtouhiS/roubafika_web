@@ -7,6 +7,23 @@ homepage:
 adminDashboard:
   path: /admin
   controller: App\Controller\HomeController::adminDashboard
+livreurDashboard:
+  path: /livreur
+  controller: App\Controller\HomeController::livreurDashboard
 verify_email:
   path: /verify
   controller: App\Controller\HomeController::index
+app_logout:
+  path: /logout
+  methods: GET
+
+
+app_panier_show:
+  path: /admin/panier
+  controller: App\Controller\PanierController::showPanier
+  methods: ['GET']
+
+app_panier_commander:
+  path: /admin/panier/commander
+  controller: App\Controller\PanierController::confirmerCommande
+  methods: ['POST']

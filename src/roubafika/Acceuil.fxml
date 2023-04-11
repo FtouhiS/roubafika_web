@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roubafika.AcceuilController">
+   <children>
+      <Button fx:id="btnProduit" layoutX="125.0" layoutY="77.0" mnemonicParsing="false" onAction="#MesProduits" text="Mes Produits" />
+      <Button layoutX="372.0" layoutY="77.0" mnemonicParsing="false" onAction="#Reclamation" text="Reclamation" />
+      <Button layoutX="372.0" layoutY="160.0" mnemonicParsing="false" onAction="#Livreur" text="Livreur" />
+      <Button layoutX="125.0" layoutY="119.0" mnemonicParsing="false" onAction="#AcheterProduits" text="Acheter Produits" />
+      <Button layoutX="125.0" layoutY="160.0" mnemonicParsing="false" onAction="#EchangerProduits" prefHeight="25.0" prefWidth="127.0" text="Echanger Produits" />
+      <Button fx:id="btnStat" layoutX="116.0" layoutY="209.0" mnemonicParsing="false" onAction="#stat" text="Stat" />
+   </children>
+</AnchorPane>

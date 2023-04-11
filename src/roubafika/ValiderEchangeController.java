@@ -1,0 +1,353 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
+package roubafika;
+
+import Entities.Session;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import Entities.Echange;
+import Entities.Produit;
+import Entities.Utilisateur;
+import Services.CRUDEchange;
+import Services.CRUDProduit;
+import Services.CRUDUtilisateur;
+import Services.ReclamationService;
+import javafx.scene.Node;
+
+/**
+ * FXML Controller class
+ *
+ * @author asus
+ */
+public class ValiderEchangeController implements Initializable {
+
+    private ImageView ImageProduit;
+    private TableColumn<?, ?> PrixColumn;
+    private TextArea textDescription;
+    private Label TitreMesProduits;
+    private Label TitreProduits;
+    private Button btnAction;
+
+    @FXML
+    private Node menuComponent;
+    @FXML
+    private Button btnValider;
+    @FXML
+    private Label TitreProduitOffre;
+    @FXML
+    private Label TitreProduitUser;
+    @FXML
+    private TextField nomProduitUser;
+    @FXML
+    private TextArea descriptionProduitUser;
+    @FXML
+    private ImageView imagProduitUser;
+    @FXML
+    private TextField nomProduitOffre;
+    @FXML
+    private TextArea descriptionProduitOffre;
+    @FXML
+    private ImageView imagProduitOffre;
+    @FXML
+    private TextField PrixProduitUser;
+    @FXML
+    private TextField PrixProduitOffre;
+
+    int id_utilisateur;
+    int id_produit;
+    int id_produitOffre;
+    @FXML
+    private Button btnRetour;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
+
+    public void initData(int idUser, int id_produit, int id_produitOffre) throws SQLException {
+        id_utilisateur = idUser;
+        this.id_produit = id_produit;
+        this.id_produitOffre = id_produitOffre;
+        CRUDProduit cr = new CRUDProduit();
+        Produit produitUser = cr.getProduitByid(id_produit);
+        Produit produitOffre = cr.getProduitByid(id_produitOffre);
+        nomProduitUser.setText(produitUser.getNom_produit());
+        descriptionProduitUser.setText(produitUser.getDescription());
+        PrixProduitUser.setText(Float.toString(produitUser.getPrix()));
+        Blob blob = produitUser.getImage();
+        InputStream inputStream;
+        inputStream = blob.getBinaryStream();
+        Image image = new Image(inputStream);
+        nomProduitUser.setEditable(false);
+        descriptionProduitUser.setEditable(false);
+        PrixProduitUser.setEditable(false);
+
+        PrixProduitOffre.setText(Float.toString(produitOffre.getPrix()));
+        imagProduitUser.setImage(image);
+        nomProduitOffre.setText(produitOffre.getNom_produit());
+        descriptionProduitOffre.setText(produitOffre.getDescription());
+        Blob blob2 = produitOffre.getImage();
+        InputStream inputStream2;
+        inputStream2 = blob2.getBinaryStream();
+        Image image2 = new Image(inputStream2);
+        imagProduitOffre.setImage(image2);
+        PrixProduitOffre.setEditable(false);
+        nomProduitOffre.setEditable(false);
+        descriptionProduitOffre.setEditable(false);
+
+    }
+
+    public void initierReclamation(ActionEvent event) throws ParseException {
+//        int selectedIndex = listReclamation.getSelectionModel().getSelectedIndex();
+//        if (selectedIndex < 0 ) {
+//           Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+//           alert.setTitle("Erreur");
+//           alert.setHeaderText("Aucune reclamation selectionnée!");
+//           alert.setContentText("Veuiller selectionner une réclamation à modifier");
+//           Optional<ButtonType> result = alert.showAndWait();
+//       }
+//        else{
+//        int idRec=listReclamation.getSelectionModel().getSelectedItem().getId();
+//        textEtat.setText(listReclamation.getSelectionModel().getSelectedItem().getEtat());
+//        //textNom.setText(listReclamation.getSelectionModel().getSelectedItem().getid_client());
+//        textDescription.setText(listReclamation.getSelectionModel().getSelectedItem().getDescription());
+//        
+//        }
+
+    }
+
+    public void Acheter() throws ParseException {
+        System.err.println("Acheter Un produit pleaaase");
+    }
+
+    public void Echanger(int idUser, int id_produitEchange) throws ParseException {
+
+//        int idpr=listProduit.getSelectionModel().getSelectedItem().getId_produit();
+//        try {
+//            FXMLLoader loader=new FXMLLoader(getClass().getResource("AfficherProduit.fxml"));
+//            Parent root = loader.load();
+//            ValiderEchangeController dcc=loader.getController();
+//            //user ca=listStaff.getSelectionModel().getSelectedItem();
+//            List<Integer> produits_echanges = new ArrayList<>();
+//            dcc.initData(idUser,0,0,idpr,produits_echanges);
+//            btnAction.getScene().setRoot(root);
+//        } catch (IOException ex) {
+//            Logger.getLogger(ReponseReclamationController.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        System.err.println("Echanger Un produit pleaaase");
+    }
+
+    public void modifier() throws ParseException {
+        System.out.println("Modifiiiiier");
+//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//        if (textNom.getText().isEmpty()| textDescription.getText().isEmpty() | textEtat.getText().isEmpty()){
+//            alert.setTitle("Reclamation");
+//            alert.setContentText("Voun ne pouvez pas modifier une reclamation avec un champ vide!!");
+//            alert.show();
+//        }
+//        else{
+//        int idRec=listReclamation.getSelectionModel().getSelectedItem().getId();
+//        reclamations r = new reclamations(idRec,Integer.parseInt(textNom.getText()), textDescription.getText(),textEtat.getText());
+//        CrudReclamation crud = new CrudReclamation();
+//        crud.modifierreclamation(r);
+//        textEtat.clear();
+//        textNom.clear();
+//        textDescription.clear();
+//        
+//            ObservableList<reclamations> data = FXCollections.observableArrayList(crud.afficherreclamation());
+//            NomColumn.setCellValueFactory(new PropertyValueFactory<>("id_client"));
+//            DescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+//            EtatColumn.setCellValueFactory(new PropertyValueFactory<>("etat"));
+//            listReclamation.setItems(data);
+//            alert.setTitle("Reclamation");
+//            alert.setContentText("Reclamaton Modifiée Avec succées");
+//            alert.show();
+//    }
+    }
+
+    public void rechercher(ActionEvent event) throws IOException {
+//        MetierReclamation met = new MetierReclamation();
+//        //ServiceUser sca = new ServiceUser();
+//        System.out.println("/////////////recherche//////////");
+//        System.out.println(recherche.getText());
+//        ObservableList<reclamations> data = FXCollections.observableArrayList(met.SearchByName(recherche.getText()));
+//        System.out.println(data);
+//        NomColumn.setCellValueFactory(new PropertyValueFactory<>("id_client"));
+//        DescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+//        EtatColumn.setCellValueFactory(new PropertyValueFactory<>("etat"));
+//        listReclamation.setItems(data);
+
+    }
+
+    private void ValiderEchange(int idUser, int id_produitEchange) {
+
+    }
+
+    @FXML
+    private void Valider(ActionEvent event) throws IOException, Exception {
+        CRUDEchange crEchange = new CRUDEchange();
+        CRUDUtilisateur crUser = new CRUDUtilisateur();
+        Utilisateur UserOffre = crUser.rechercheUserbyid(Session.getCurrentUser().getIdUser());
+        CRUDProduit cr = new CRUDProduit();
+        Produit produitOffre = cr.getProduitByid(id_produitOffre);
+        Utilisateur UserToGetOffre = crUser.rechercheUserbyid(produitOffre.getId_user());
+
+        Echange e = new Echange(id_produit, id_produitOffre, UserOffre.getAdresse(), UserToGetOffre.getAdresse(), "En attente", 0);
+        crEchange.ajouterEchange(e);
+        CRUDProduit met= new CRUDProduit();
+        String r = "Vous avez reçu une offre sur votre produit: " + produitOffre.getNom_produit() ;
+        met.sendMail(r, UserToGetOffre.getAdresse_mail());
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("roubafikaHome.fxml"));
+            Scene c = new Scene(root);
+            Stage stage = (Stage) btnValider.getScene().getWindow();
+            stage.setScene(c);
+        } catch (IOException ex) {
+            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Offre accepté");
+        alert.setContentText("Merci d'accepter cette offre");
+        alert.show();
+
+    }
+//     private void home() throws IOException{
+//            Parent root;
+//            try {
+//            root = FXMLLoader.load(getClass().getResource("ListReclamation.fxml"));
+//            Scene c=new Scene(root);
+//            Stage stage=(Stage)btnEnvoyer.getScene().getWindow();
+//            stage.setScene(c);
+//        } catch (IOException ex) {
+//            Logger.getLogger(AjouterController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//          
+//    }
+
+    @FXML
+    private void retour(ActionEvent event) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherProduit.fxml"));
+            Parent root = loader.load();
+            AfficherProduitController dcc = loader.getController();
+            //user ca=listStaff.getSelectionModel().getSelectedItem();
+            dcc.initData(id_utilisateur, 0, 0, id_produitOffre);
+            btnRetour.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ReponseReclamationController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.err.println("Echanger Un produit pleaaase");
+    }
+    
+     @FXML
+    private void AcheterProduits(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherProduitVente.fxml"));
+            Parent root = loader.load();
+            AfficherProduitVenteController dcc = loader.getController();
+            //user ca=listStaff.getSelectionModel().getSelectedItem();
+            int idUser = 14;
+            ArrayList<Integer> panier = new ArrayList<Integer>();
+            dcc.initData(idUser, panier);
+            btnRetour.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ReponseReclamationController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void MesProduits(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherProduit.fxml"));
+            Parent root = loader.load();
+            AfficherProduitController dcc = loader.getController();
+            //user ca=listStaff.getSelectionModel().getSelectedItem();
+            int idUser = 13;
+            dcc.initData(idUser, 0, 0, 0);
+            btnRetour.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ReponseReclamationController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void EchangerProduits(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherProduit.fxml"));
+            Parent root = loader.load();
+            AfficherProduitController dcc = loader.getController();
+            //user ca=listStaff.getSelectionModel().getSelectedItem();
+            int idUser = 14;
+            dcc.initData(idUser, 1, 0, 0);
+            btnRetour.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ReponseReclamationController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void AjouterProduit(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterProduit.fxml"));
+            Parent root = loader.load();
+            AjouterProduitController dcc = loader.getController();
+            //user ca=listStaff.getSelectionModel().getSelectedItem();
+            int idUser = 14;
+            dcc.initData(idUser);
+            btnRetour.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ReponseReclamationController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}

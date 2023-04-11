@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Roubafika.jnlp">
+  <information>
+    <title>Roubafika</title>
+    <vendor>moham</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Roubafika.jar" size="826102" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\javax.mail.jar" size="659033" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.23.jar" size="2415211" download="eager" />
+    <jar href="lib\pdfbox-app-2.0.27.jar" size="10083036" download="eager" />
+    <jar href="lib\twilio-9.2.4-jar-with-dependencies.jar" size="11026113" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="roubafika.Roubafika"  name="Roubafika" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="812.0" prefWidth="1024.0" style="-fx-background-color: FFE765;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roubafika.AfficherReclamationController">
+   <children>
+       <fx:include fx:id="menuComponent" source="menuFXML.fxml" />
+      <AnchorPane layoutX="261.0" layoutY="166.0" prefHeight="632.0" prefWidth="727.0" style="-fx-border-color: BLACK; -fx-border-radius: 20; -fx-padding: 20;">
+         <children>
+            <TableView fx:id="listReclamation" layoutX="33.0" layoutY="85.0" prefHeight="469.0" prefWidth="435.0">
+              <columns>
+                <TableColumn fx:id="columnDate" prefWidth="148.0" text="     Date d'ajout" />
+                  <TableColumn fx:id="columnSujet" prefWidth="101.0" text="     Sujet" />
+                  <TableColumn fx:id="columnDescription" prefWidth="182.0" text="               Description" />
+              </columns>
+            </TableView>
+            <Button fx:id="supp" layoutX="33.0" layoutY="564.0" mnemonicParsing="false" onAction="#supprimerReclamation" text="Suprimer" />
+            <Button fx:id="btnModifier" layoutX="127.0" layoutY="564.0" mnemonicParsing="false" onAction="#RemplirReclamation" text="Modifier" />
+            <Button fx:id="btnModifier1" layoutX="593.0" layoutY="564.0" mnemonicParsing="false" onAction="#modifierReclamation" text="Enregistrer" />
+            <Button fx:id="btnRepondre" layoutX="217.0" layoutY="564.0" mnemonicParsing="false" onAction="#Repondre" text="Repondre" />
+            <TextArea fx:id="txt_description" layoutX="489.0" layoutY="269.0" prefHeight="174.0" prefWidth="196.0" />
+            <Text layoutX="489.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+            <Text layoutX="489.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sujet" />
+            <TextField fx:id="txt_sujet" layoutX="560.0" layoutY="154.0" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white;" />
+            <Button fx:id="ref" layoutX="606.0" layoutY="85.0" mnemonicParsing="false" onAction="#rafraichir" text="rafraîchir" />
+            <TextField fx:id="recherche" layoutX="33.0" layoutY="41.0" />
+            <Button fx:id="btnRechercher" layoutX="210.0" layoutY="41.0" mnemonicParsing="false" onAction="#rechercher" prefHeight="31.0" prefWidth="99.0" styleClass="button4" stylesheets="@../gui/application.css" text="Rechercher" textFill="#171717" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="518.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reclamations" wrappingWidth="213.642578125">
+         <font>
+            <Font name="Andalus" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

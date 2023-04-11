@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="802.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roubafika.MenuFXMLController">
+     <VBox fx:id="menuBar" layoutX="6.0" layoutY="165.0" prefHeight="593.0" prefWidth="221.0" spacing="20.0" style="-fx-border-color: black; -fx-border-radius: 20;">
+         <children>
+            <HBox fx:id="ServicesModule" alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="203.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="iconService" fitHeight="32.0" fitWidth="35.0" HBox.hgrow="NEVER">
+                     <image>
+                        <Image url="@../img/public-service.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="ServicesButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: white;" text="Services">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="MS UI Gothic" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         <HBox fx:id="ProduitModule" alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="203.0" spacing="10.0">
+            <children>
+               <ImageView fx:id="iconProduit" fitHeight="32.0" fitWidth="35.0" HBox.hgrow="NEVER">
+                  <image>
+                     <Image url="@../img/icone-produit.png" />
+                  </image>
+               </ImageView>
+               <Button fx:id="ProduitButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: white;" text="Produits">
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="MS UI Gothic" size="24.0" />
+                  </font>
+               </Button>
+            </children>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </HBox>
+         <HBox fx:id="ReclamationModule" alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="203.0" spacing="10.0">
+            <children>
+               <ImageView fx:id="iconReclamation" fitHeight="46.0" fitWidth="34.0" HBox.hgrow="NEVER">
+                  <image>
+                     <Image url="@../img/R.png" />
+                  </image>
+               </ImageView>
+               <Button fx:id="ReclamationButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: white;" text="Reclamation">
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="MS UI Gothic" size="24.0" />
+                  </font>
+               </Button>
+            </children>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </HBox>
+         <HBox fx:id="EchangeModule" alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="203.0" spacing="10.0">
+            <children>
+               <ImageView fx:id="iconReclamation1" fitHeight="46.0" fitWidth="34.0" HBox.hgrow="NEVER">
+                  <image>
+                     <Image url="@../img/exchange.jpg" />
+                  </image>
+               </ImageView>
+               <Button fx:id="EchangeButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: white;" text="Echange">
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="MS UI Gothic" size="24.0" />
+                  </font>
+               </Button>
+            </children>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </HBox>
+         <HBox fx:id="CommandeModule" alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="203.0" spacing="10.0">
+            <children>
+               <ImageView fx:id="iconReclamation2" fitHeight="46.0" fitWidth="34.0" HBox.hgrow="NEVER">
+                  <image>
+                     <Image url="@../img/commande.png" />
+                  </image>
+               </ImageView>
+               <Button fx:id="CommandeButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: white;" text="Commande">
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="MS UI Gothic" size="24.0" />
+                  </font>
+               </Button>
+            </children>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </HBox>
+         <HBox fx:id="LogoutModule" alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="203.0" spacing="10.0">
+            <children>
+               <ImageView fx:id="iconReclamation21" fitHeight="46.0" fitWidth="34.0" HBox.hgrow="NEVER">
+                  <image>
+                     <Image url="@../img/logout.png" />
+                  </image>
+               </ImageView>
+               <Button fx:id="LogoutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="150.0" style="-fx-background-color: white;" text="Logout">
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="MS UI Gothic" size="24.0" />
+                  </font>
+               </Button>
+            </children>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <SepiaTone />
+         </effect>
+      <padding>
+         <Insets left="5.0" top="20.0" />
+      </padding>
+      </VBox>
+        <ImageView fx:id="logo" fitHeight="128.0" fitWidth="141.0" layoutX="46.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo.PNG" />
+         </image>
+      </ImageView>
+</AnchorPane>

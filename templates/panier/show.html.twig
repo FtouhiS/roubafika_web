@@ -1,0 +1,44 @@
+{# templates/panier/show.html.twig #}
+
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block body %}
+    <h1>Mon panier</h1>
+    {% if app.session.get('panier')|length == 0 %}
+        <p>Votre panier est vide.</p>
+    {% else %}
+        <table>
+            <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Sous-total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set total = 0 %}
+            {% for item in app.session.get('panier') %}
+                <tr>
+                    <td>{{ item.nomProduit }}</td>
+                    <td>{{ item.prix }} €</td>
+                    <td>{{ item.quantite }}</td>
+                    <td>{{ item.quantite * item.prix }} €</td>
+                </tr>
+                {% set total = total + (item.quantite * item.prix) %}
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="3">Total</th>
+                <td>{{ total }} €</td>
+            </tr>
+            </tfoot>
+        </table>
+        <form action="{{ path('app_panier_commander') }}" method="POST">
+            <button type="submit">Commander</button>
+        </form>
+    {% endif %}
+{% endblock %}

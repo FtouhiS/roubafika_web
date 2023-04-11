@@ -1,0 +1,106 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 mars 2023, 00:02:04
+    Author     : moham
+*/
+
+.card-container {
+    -fx-background-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 20px;
+     -fx-spacing: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 2, 2);
+    -fx-pref-width: 280px;
+    -fx-pref-height: 190px;
+    -fx-max-width: 280px;
+    -fx-max-height: 190px;
+   
+}
+.card-categorie{
+   
+    -fx-font-size: 18px;
+}   
+
+.card-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    
+}   
+
+.card-desc {
+    -fx-font-size: 16px;
+   
+}
+.card-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+     /* Add padding to create space between center and bottom */
+}
+.card-pane .demander-btn {
+    -fx-alignment: CENTER;
+}
+
+/* Optional: add spacing between the cards */
+.vbox > * {
+    margin-bottom: 400px;
+}
+.card-button {
+    
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 30px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+    -fx-pref-width: 100px;
+    -fx-max-width: 200px;
+    -fx-alignment: center;
+    
+}
+.card-button-supprimer{
+     -fx-background-color: #DF2E38;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 30px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+    -fx-pref-width: 100px;
+    -fx-max-width: 200px;
+    -fx-alignment: center;
+}
+.card-button:hover {
+    -fx-background-color: #1976d2;
+}
+
+.card-button:pressed {
+    -fx-background-color: #0d47a1;
+}
+
+.menu-bar {
+    -fx-background-color: #F2F2F2;
+}
+
+.menu-bar > * {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 20px;
+    -fx-text-fill: #333333;
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.menu-bar > *:hover {
+    -fx-background-color: #E2E2E2;
+}
+
+.menu-bar > .button {
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: transparent;
+}

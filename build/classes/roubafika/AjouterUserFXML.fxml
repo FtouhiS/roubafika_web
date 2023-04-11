@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="843.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roubafika.AjouterUserFXMLController">
+   <children>
+      <AnchorPane prefHeight="699.0" prefWidth="439.0" style="-fx-background-color: FFE765;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="26.0" prefHeight="54.0" prefWidth="168.0" text="S'inscrire" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="40.0" />
+               </font>
+            </Label>
+            <VBox layoutX="50.0" layoutY="102.0" prefHeight="542.0" prefWidth="390.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="98.0" text="Nom:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfNom" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Label prefWidth="98.0" text="Prenom:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfPrenom" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="98.0" text="Email:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfAdresse_mail" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="98.0" text="Password:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfmdp" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="98.0" text="Adresse:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfAdresse" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="98.0" text="Numero:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfnumero" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="286.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="69.0" text="Role" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="309.0" spacing="20.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <RadioButton fx:id="btnuser" mnemonicParsing="false" prefHeight="21.0" prefWidth="92.0" text="User" />
+                        <RadioButton fx:id="btnlivreur" mnemonicParsing="false" prefHeight="21.0" prefWidth="82.0" text="Livreur" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Button fx:id="btnsinscrire" mnemonicParsing="false" onAction="#ajouterUtlisateur" prefHeight="56.0" prefWidth="143.0" style="-fx-background-color: PURPLE;" text="S'inscrire" textFill="#f8f3f3" />
+                        <Button mnemonicParsing="false" onAction="#Reset" prefHeight="56.0" prefWidth="143.0" style="-fx-background-color: PURPLE;" text="Reset" textFill="#f8f7f7" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Hyperlink fx:id="login_acc" alignment="CENTER" layoutX="177.0" layoutY="653.0" styleClass="hypertext-design" stylesheets="@design.css" text="Have an account ?" textAlignment="CENTER">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="15.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="443.0" prefHeight="699.0" prefWidth="400.0" style="-fx-background-color: FFE765;" styleClass="login-bg" stylesheets="@design.css">
+         <children>
+            <Label fx:id="ROUBAFIKA" alignment="CENTER" layoutX="96.0" layoutY="210.0" prefWidth="209.0" text="Robafika" textFill="#9e1790">
+               <font>
+                  <Font name="Baskerville Old Face" size="50.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="180.0" fitWidth="200.0" layoutX="100.0" layoutY="296.0">
+               <image>
+                  <Image url="@../img/logo.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

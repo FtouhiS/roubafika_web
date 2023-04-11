@@ -1,0 +1,6 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.button4
+{
+    -fx-background-color :linear-gradient(to top left, #E9F00D, #D4CEE3);
+    -fx-background-radius :  30 30 30 30;
+}

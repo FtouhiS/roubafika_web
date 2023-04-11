@@ -24,4 +24,8 @@ class HomeController extends AbstractController
     {
         return $this->render('roubafika/adminHome.html.twig');
     }
+    public function LivreurDashboard(): Response
+    {
+        return $this->render('roubafika/livreurHome.html.twig');
+    }
 }
