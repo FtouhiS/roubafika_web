@@ -1,0 +1,27 @@
+{% extends 'baselivreur.html.twig' %}
+{% block title %} Mes Livraisons {% endblock %}
+{% block dropdownNotif %} {% endblock %}
+{% block body %}
+    <h1>Mes Livraisons</h1>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th>Client</th>
+            <th>Adresse</th>
+            <th>Date de livraison</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for delivery in deliveries %}
+            <tr>
+
+                <td>{{ delivery.client.nom }}</td>
+                <td>{{ delivery.client.adresse }}</td>
+                <td>{{ delivery.dateLivraison|date('d/m/Y H:i') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
